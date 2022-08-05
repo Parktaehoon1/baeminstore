@@ -261,7 +261,7 @@ body {
 .swiper-slide img {
   display: block;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
 
 .sw-control {
@@ -280,6 +280,39 @@ body {
 }
 
 /* 아이템 리스트 영역 */
+.item-list-wrap{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 auto;
+  padding: 120px 0 200px 0;
+  flex: 1;
+}
+
+.main-item{}
+.sw-main-item{}
+.swiper-wrapper{}
+.swiper-slide{}
+.swiper-slide img{
+  position: relative;
+  display: block;
+  width: 312px;
+  height: 312px;
+}
+.swiper-img-hover{
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-in-out 0.5s;
+}
+
+.swiper-slide img:hover .swiper-img-hover{
+  opacity: 1;
+  visibility: visible;
+}
 
 /* 아이템리스트 공통영역 */
 
