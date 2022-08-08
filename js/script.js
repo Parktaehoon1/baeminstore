@@ -40,4 +40,16 @@ window.onload = function () {
         },
     })
 
+    let mainItemSwiper = new Swiper('.sw-main-item', {
+        loop: true,
+        speed: 500,
+        slidesPerView: 3,
+        slidesPerGroup: 3,  
+        spaceBetween : 6,
+        navigation: {
+            nextEl: ".main-item-prev",
+            prevEl: ".main-item-next",
+        },
+
+    })
 }

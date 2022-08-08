@@ -258,10 +258,40 @@ body {
 }
 
 
-.swiper-slide img {
+.visual-1 {
   display: block;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
+  background: url('../images/visual1.png') no-repeat center;
+  background-size: cover;
+}
+.visual-2 {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: url('../images/visual2.png') no-repeat center;
+  background-size: cover;
+}
+.visual-3 {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: url('../images/visual3.png') no-repeat center;
+  background-size: cover;
+}
+.visual-4 {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: url('../images/visual4.png') no-repeat center;
+  background-size: cover;
+}
+.visual-5 {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: url('../images/visual5.png') no-repeat center;
+  background-size: cover;
 }
 
 .sw-control {
@@ -290,16 +320,38 @@ body {
   flex: 1;
 }
 
-.main-item{}
-.sw-main-item{}
-.swiper-wrapper{}
-.swiper-slide{}
+.main-item{
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  overflow: hidden;
+}
+.swiper-container{
+
+}
+.sw-main-item{
+  flex-wrap: nowrap;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0 92px;
+  overflow: hidden;
+}
+.swiper-wrapper{
+}
+.swiper-slide{
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
 .swiper-slide img{
   position: relative;
   display: block;
-  width: 312px;
-  height: 312px;
-}
+  width: 100%;
+  height: 100%;
+} 
 .swiper-img-hover{
   position: absolute;
   left: 0;
@@ -308,12 +360,58 @@ body {
   visibility: hidden;
   transition: ease-in-out 0.5s;
 }
+.main-item-prev{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 32px;
+  height: 58px;
+  background: url('../images/arr_swiper_prev_l.png') no-repeat center;
+  background-size: cover;
+  z-index: 9;
+}
+.main-item-next{
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 32px;
+  height: 58px;
+  background: url('../images/arr_swiper_next_l.png') no-repeat center;
+  background-size: cover;
+  z-index: 9;
+}
 
 .swiper-slide img:hover .swiper-img-hover{
   opacity: 1;
   visibility: visible;
 }
 
+.main-item-desc{
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.main-item-desc > p {
+  margin-bottom: 5px;
+}
+
+.main-item-desc:hover{
+  color: aquamarine;
+}
+
+.item-list-wrap h3{
+  margin-top: 120px;
+    padding-top: 120px;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 42px;
+    text-align: center;
+    border-top: 1px solid #DDD;
+}
 /* 아이템리스트 공통영역 */
 
 
