@@ -86,7 +86,12 @@ body {
 /* 전체영역 */
 .wrap {
   position: relative;
-  display: block;
+  width: 100%;
+  min-height: 100%;
+  /* min-width: 1320px; */
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 헤더영역 */
@@ -107,7 +112,7 @@ body {
 
 }
 
-.header-fix{
+.header-fix {
   position: fixed;
   left: 0;
   top: 0;
@@ -168,8 +173,9 @@ body {
   margin-bottom: 36px;
 }
 
-.depth1 li a:hover{
-  color: #2AC1BC;;
+.depth1 li a:hover {
+  color: #2AC1BC;
+  ;
 }
 
 
@@ -251,10 +257,11 @@ body {
   left: 50%;
   margin-left: -674px;
 }
-.swiper-button-prev:after{
+
+.swiper-button-prev:after {
   background: url('../images/main_arr_prev.png') no-repeat;
   background-size: 74px auto;
-  
+
 }
 
 
@@ -265,6 +272,7 @@ body {
   background: url('../images/visual1.png') no-repeat center;
   background-size: cover;
 }
+
 .visual-2 {
   display: block;
   width: 100vw;
@@ -272,6 +280,7 @@ body {
   background: url('../images/visual2.png') no-repeat center;
   background-size: cover;
 }
+
 .visual-3 {
   display: block;
   width: 100vw;
@@ -279,6 +288,7 @@ body {
   background: url('../images/visual3.png') no-repeat center;
   background-size: cover;
 }
+
 .visual-4 {
   display: block;
   width: 100vw;
@@ -286,6 +296,7 @@ body {
   background: url('../images/visual4.png') no-repeat center;
   background-size: cover;
 }
+
 .visual-5 {
   display: block;
   width: 100vw;
@@ -310,7 +321,7 @@ body {
 }
 
 /* 아이템 리스트 영역 */
-.item-list-wrap{
+.item-list-wrap {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -320,39 +331,59 @@ body {
   flex: 1;
 }
 
-.main-item{
+.main-item-banner img {
   position: relative;
   display: block;
   width: 100%;
-  margin-top: 15px;
+}
+
+
+.main-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 50px;
+  padding: 0 92px;
   overflow: hidden;
 }
-.swiper-container{
 
-}
-.sw-main-item{
+
+.swiper-container {}
+
+.sw-main-item {
   flex-wrap: nowrap;
   position: relative;
   display: block;
   width: 100%;
-  padding: 0 92px;
   overflow: hidden;
 }
-.swiper-wrapper{
+
+.swiper-wrapper {
 }
-.swiper-slide{
+
+/* .swiper-slide {
   position: relative;
   display: block;
   width: 100%;
   margin: 0 auto;
-}
-.swiper-slide img{
+} */
+.sw-main-item-wrapper .main-slide{
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
-} 
-.swiper-img-hover{
+
+}
+
+
+.main-slide img {
+  position: relative;
+  display: block;
+  width: 312px;
+  height: 312px;
+}
+
+.swiper-img-hover {
   position: absolute;
   left: 0;
   top: 0;
@@ -360,7 +391,21 @@ body {
   visibility: hidden;
   transition: ease-in-out 0.5s;
 }
-.main-item-prev{
+
+.main-slide:hover .swiper-img-hover{
+  opacity: 1;
+  visibility: visible;
+}
+
+.swiper-img-hover img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+.main-item-prev {
   position: absolute;
   left: 0;
   top: 50%;
@@ -372,7 +417,8 @@ body {
   background-size: cover;
   z-index: 9;
 }
-.main-item-next{
+
+.main-item-next {
   position: absolute;
   right: 0;
   top: 50%;
@@ -385,33 +431,75 @@ body {
   z-index: 9;
 }
 
-.swiper-slide img:hover .swiper-img-hover{
-  opacity: 1;
-  visibility: visible;
-}
-
-.main-item-desc{
+.main-item-desc {
+  position: relative;
+  display: block;
+  width: 312px;
   text-align: center;
   transition: all 0.3s;
+  margin-top: 20px;
+  padding-top: 22px;
 }
 
-.main-item-desc > p {
+.main-item-desc>p {
   margin-bottom: 5px;
 }
 
-.main-item-desc:hover{
+.main-item-desc:hover {
   color: aquamarine;
 }
 
-.item-list-wrap h3{
+.item-list-wrap h3 {
   margin-top: 120px;
-    padding-top: 120px;
-    font-size: 30px;
-    font-weight: 800;
-    line-height: 42px;
-    text-align: center;
-    border-top: 1px solid #DDD;
+  padding-top: 120px;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 42px;
+  text-align: center;
+  border-top: 1px solid #DDD;
 }
+
+.item-list{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+.goods-list{
+  width: 282px;
+  margin: 60px 0 0 24px;
+  font-size: 16px;
+  text-align: center;
+  transition: .3s ease color;
+  display: flex;
+  flex-direction: column;
+}
+
+.goods-list:nth-child(4n){
+  margin-left: 0;
+}
+
+.goods-list img{
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.goods-list-hover{
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: ease-in-out 0.5s;
+}
+.goods-list-hover img{
+  position: relative;
+  display: block;
+}
+.goods-list-desc{
+  position: relative;
+  display: block;
+}
+
 /* 아이템리스트 공통영역 */
 
 
