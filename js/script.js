@@ -111,6 +111,7 @@ window.onload = function () {
             }
         })
     }
+
     dataPromise('GET', 'itemlistmd.json')
         .then(JSON.parse)
         .then(show)
@@ -138,8 +139,37 @@ window.onload = function () {
         });
         html += ``;
         document.getElementById('md-item-list').innerHTML = html;
+    }
 
 
+    
+    swdataPromise('GET', 'swiper.json')
+        .then(JSON.parse)
+        .then(show)
+        .catch(console.error);
+
+    function show(_obj) {
+        console.log('성공', _obj);
+
+        let html = ``
+
+        _obj.forEach(element => {
+            console.log(element.url)
+            html += `
+            <div class="swiper-slide main-slide">
+            <img src="${element.url}" alt="">
+            <span class="swiper-img-hover">
+              <img src="${element.hoverurl}" alt="">
+            </span>
+            <div class="main-item-desc">
+              <p>${element.title}</p>
+              <p>${element.subtitle}</p>
+            </div>
+          </div>
+            `;
+        });
+        html += ``;
+        document.getElementById('main-slide').innerHTML = html;
     }
 
 
