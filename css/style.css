@@ -471,6 +471,7 @@ body {
 
 
 .goods-list{
+  position: relative;
   width: 282px;
   margin: 60px 0 0 24px;
   font-size: 16px;
@@ -478,6 +479,7 @@ body {
   transition: .3s ease color;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 
@@ -495,10 +497,22 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  display: block;
+  width: 282px;  
   opacity: 0;
   visibility: hidden;
   transition: ease-in-out 0.5s;
 }
+#item-list .goods-list:hover .goods-list-hover{
+  opacity: 1;
+  visibility: visible;
+}
+
+#md-item-list .goods-list:hover .goods-list-hover{
+  opacity: 1;
+  visibility: visible;
+}
+
 .goods-list-hover img{
   position: relative;
   display: block;

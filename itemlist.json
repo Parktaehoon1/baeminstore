@@ -1,33 +1,41 @@
 [{
-        "title": "JSON파일공부1",
-        "url": "images/itemlist1.png"
+        "title": "JSONstudy1",
+        "url": "images/itemlist1.png",
+        "hoverurl": "images/itemlisthover1.png"
     },
     {
         "title": "JSON파일공부2",
-        "url": "images/itemlist2.png"
+        "url": "images/itemlist2.png",
+        "hoverurl": "images/itemlisthover2.png"
     },
     {
         "title": "JSON파일공부3",
-        "url": "images/itemlist3.png"
+        "url": "images/itemlist3.png",
+        "hoverurl": "images/itemlisthover3.png"
     },
     {
         "title": "JSON파일공부4",
-        "url": "images/itemlist4.png"
+        "url": "images/itemlist4.png",
+        "hoverurl": "images/itemlisthover4.png"
     },
     {
         "title": "JSON파일공부5",
-        "url": "images/itemlist5.png"
+        "url": "images/itemlist5.png",
+        "hoverurl": "images/itemlisthover5.png"
     },
     {
         "title": "JSON파일공부6",
-        "url": "images/itemlist6.png"
+        "url": "images/itemlist6.png",
+        "hoverurl": "images/itemlisthover6.png"
     },
     {
         "title": "JSON파일공부7",
-        "url": "images/itemlist7.png"
+        "url": "images/itemlist7.png",
+        "hoverurl": "images/itemlisthover7.png"
     },
     {
         "title": "JSON파일공부8",
-        "url": "images/itemlist8.png"
+        "url": "images/itemlist8.png",
+        "hoverurl": "images/itemlisthover8.png"
     }
 ]

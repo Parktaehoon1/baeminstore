@@ -56,15 +56,15 @@ window.onload = function () {
         .then(data => {
             // console.log(data)
 
-            let html = ``
+            let html = ''
 
             data.forEach(element => {
-                // console.log(element)
+                console.log(element)
                 html += `
-                     <div class="goods-list">
-                    <img src="${element.url}" alt="gg">
+                <div class="goods-list">
+                        <img src="${element.url}" alt="gg">
                     <span class="goods-list-hover">
-                        <img src="images/itemlist-hover.png" alt="">
+                        <img src="${element.hoverurl}" alt="">
                     </span>
                     <div class="goods-list-desc">
                         <p>${element.title}</p>
@@ -72,11 +72,25 @@ window.onload = function () {
                     </div>
                     </div>
                     `;
+                // html += `
+                // <div class="goods-list" id="item-list">
+                //         <img src="${element.url}" alt="gg">
+                //     <span class="goods-list-hover" id="item-list">
+                //         <img src="${element.hoverurl}" alt="">
+                //     </span>
+                //     <div class="goods-list-desc" id="item-list">
+                //         <p>${element.title}</p>
+                //         <p>${element.title}</p>
+                //     </div>
+                //     </div>
+                //     `;
             });
-            html += ``;
+            html += '';
             document.getElementById('item-list').innerHTML = html;
         })
         .catch(err => console.log(err))
+
+
 
     let dataPromise = function (_method, _url, _payload) {
         return new Promise((resolve, reject) => {
@@ -113,7 +127,7 @@ window.onload = function () {
             <div class="goods-list">
                 <img src="${element.url}" alt="gg">
                 <span class="goods-list-hover">
-                <img src="images/itemlist-hover.png" alt="">
+                <img src="${element.hoverurl}" alt="">
                 </span>
                 <div class="goods-list-desc">
                 <p>${element.title}</p>
