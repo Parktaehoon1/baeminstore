@@ -374,7 +374,8 @@ body {
 .sw-main-item-wrapper .main-slide{
   position: relative;
   display: block;
-  width: 100%;
+  /* width: 100%; */
+  width: 312px;
   height: 100%;
 
 }
@@ -517,11 +518,58 @@ body {
   position: relative;
   display: block;
 }
+
+.goods-list:hover .item-title{
+  color: #2AC1BC;
+}
+.goods-list:hover .item-price{
+  color: #2AC1BC;
+}
+
+.goods-list:hover .item-sale{
+  color: #2AC1BC;
+}
+
 .goods-list-desc{
   position: relative;
   display: block;
+  margin-top: 20px;
+  padding-top: 22px;
 }
 
+.item-tag{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 15px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+}
+
+.item-title{
+  position: relative;
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.item-price{
+  position: relative;
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.item-sale{
+  display: inline-block;
+  margin-right: 8px;
+  color: #CCC;
+  transition: .3s ease color;
+  text-decoration: line-through;
+}
 /* 아이템리스트 공통영역 */
 
 

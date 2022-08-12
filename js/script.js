@@ -62,15 +62,16 @@ window.onload = function () {
                 console.log(element)
                 html += `
                 <div class="goods-list">
-                        <img src="${element.url}" alt="gg">
-                    <span class="goods-list-hover">
-                        <img src="${element.hoverurl}" alt="">
-                    </span>
-                    <div class="goods-list-desc">
-                        <p>${element.title}</p>
-                        <p>${element.title}</p>
-                    </div>
-                    </div>
+                <img src="${element.url}" alt="gg">
+                <span class="goods-list-hover">
+                <img src="${element.hoverurl}" alt="">
+                </span>
+                <div class="goods-list-desc">
+                <p class="item-tag">${element.tag}</p>
+                <p class="item-title">${element.title}</p>
+                <p class="item-price"><span class="item-sale">${element.price}</span>${element.subtitle}</p>
+                </div>
+                </div>
                     `;
                 // html += `
                 // <div class="goods-list" id="item-list">
@@ -114,10 +115,10 @@ window.onload = function () {
 
     dataPromise('GET', 'itemlistmd.json')
         .then(JSON.parse)
-        .then(show)
+        .then(showMd)
         .catch(console.error);
 
-    function show(_obj) {
+    function showMd(_obj) {
         console.log('성공', _obj);
 
         let html = ``
@@ -131,8 +132,9 @@ window.onload = function () {
                 <img src="${element.hoverurl}" alt="">
                 </span>
                 <div class="goods-list-desc">
-                <p>${element.title}</p>
-                <p>${element.title}</p>
+                <p class="item-tag">${element.tag}</p>
+                <p class="item-title">${element.title}</p>
+                <p class="item-price"><span class="item-sale">${element.price}</span>${element.subtitle}</p>
                 </div>
                 </div>
             `;
@@ -141,21 +143,18 @@ window.onload = function () {
         document.getElementById('md-item-list').innerHTML = html;
     }
 
+    // 스와이퍼
 
-    
-    swdataPromise('GET', 'swiper.json')
-        .then(JSON.parse)
-        .then(show)
-        .catch(console.error);
+    fetch("swiper.json")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
 
-    function show(_obj) {
-        console.log('성공', _obj);
+            let html = ''
 
-        let html = ``
-
-        _obj.forEach(element => {
-            console.log(element.url)
-            html += `
+            data.forEach(element => {
+                console.log(element)
+                html += `
             <div class="swiper-slide main-slide">
             <img src="${element.url}" alt="">
             <span class="swiper-img-hover">
@@ -167,10 +166,13 @@ window.onload = function () {
             </div>
           </div>
             `;
-        });
-        html += ``;
-        document.getElementById('main-slide').innerHTML = html;
-    }
+
+            });
+            html += '';
+            document.getElementById('main-slide').innerHTML = html;
+        })
+        .catch(err => console.log(err))
+
 
 
 }
