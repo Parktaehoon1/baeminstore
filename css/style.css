@@ -83,6 +83,34 @@ body {
   margin: 0 auto;
 }
 
+.gotop{
+  position: fixed;
+  right: 10vw;
+  bottom: 70px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.gotop-show{
+  visibility: visible;
+  opacity: 1;
+}
+
+.gotop-btn{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: url('../images/gotop.svg') no-repeat center;
+  background-size: cover;
+}
+
 /* 전체영역 */
 .wrap {
   position: relative;
@@ -327,7 +355,7 @@ body {
   flex-direction: column;
   height: 100%;
   margin: 0 auto;
-  padding-bottom:200px;
+  padding-bottom: 200px;
   flex: 1;
 }
 
@@ -336,7 +364,8 @@ body {
   display: block;
   width: 100%;
 }
-.main-item-banner{
+
+.main-item-banner {
   display: block;
   margin-top: 120px;
 }
@@ -362,8 +391,7 @@ body {
   overflow: hidden;
 }
 
-.swiper-wrapper {
-}
+.swiper-wrapper {}
 
 /* .swiper-slide {
   position: relative;
@@ -371,7 +399,7 @@ body {
   width: 100%;
   margin: 0 auto;
 } */
-.sw-main-item-wrapper .main-slide{
+.sw-main-item-wrapper .main-slide {
   position: relative;
   display: block;
   /* width: 100%; */
@@ -397,7 +425,7 @@ body {
   transition: ease-in-out 0.5s;
 }
 
-.main-slide:hover .swiper-img-hover{
+.main-slide:hover .swiper-img-hover {
   opacity: 1;
   visibility: visible;
 }
@@ -464,14 +492,14 @@ body {
   border-top: 1px solid #DDD;
 }
 
-.item-list{
+.item-list {
   position: relative;
   display: flex;
   flex-wrap: wrap;
 }
 
 
-.goods-list{
+.goods-list {
   position: relative;
   width: 282px;
   margin: 60px 0 0 24px;
@@ -485,59 +513,62 @@ body {
 
 
 
-.goods-list:nth-child(4n){
+.goods-list:nth-child(4n) {
   margin-left: 0;
 }
 
-.goods-list img{
+.goods-list img {
   position: relative;
   display: block;
   width: 100%;
 }
-.goods-list-hover{
+
+.goods-list-hover {
   position: absolute;
   left: 0;
   top: 0;
   display: block;
-  width: 282px;  
+  width: 282px;
   opacity: 0;
   visibility: hidden;
   transition: ease-in-out 0.5s;
 }
-#item-list .goods-list:hover .goods-list-hover{
+
+#item-list .goods-list:hover .goods-list-hover {
   opacity: 1;
   visibility: visible;
 }
 
-#md-item-list .goods-list:hover .goods-list-hover{
+#md-item-list .goods-list:hover .goods-list-hover {
   opacity: 1;
   visibility: visible;
 }
 
-.goods-list-hover img{
+.goods-list-hover img {
   position: relative;
   display: block;
 }
 
-.goods-list:hover .item-title{
-  color: #2AC1BC;
-}
-.goods-list:hover .item-price{
+.goods-list:hover .item-title {
   color: #2AC1BC;
 }
 
-.goods-list:hover .item-sale{
+.goods-list:hover .item-price {
   color: #2AC1BC;
 }
 
-.goods-list-desc{
+.goods-list:hover .item-sale {
+  color: #2AC1BC;
+}
+
+.goods-list-desc {
   position: relative;
   display: block;
   margin-top: 20px;
   padding-top: 22px;
 }
 
-.item-tag{
+.item-tag {
   position: relative;
   display: flex;
   justify-content: center;
@@ -549,33 +580,158 @@ body {
   line-height: 14px;
 }
 
-.item-title{
+.item-title {
   position: relative;
   display: block;
   width: 90%;
   margin: 0 auto;
 }
 
-.item-price{
+.item-price {
   position: relative;
   display: block;
   width: 90%;
   margin: 0 auto;
 }
 
-.item-sale{
+.item-sale {
   display: inline-block;
   margin-right: 8px;
   color: #CCC;
   transition: .3s ease color;
   text-decoration: line-through;
 }
+
 /* 아이템리스트 공통영역 */
 
 
 /* 푸터영역 */
-.footer{
+.footer {
   /* margin-top: auto; */
   padding: 70px 0 100px 0;
   background-color: #FAFAFA;
+}
+
+.footer .inner {
+  position: relative;
+  display: flex;
+}
+
+.footer-right {
+  position: relative;
+  display: block;
+}
+
+.footer-logo {
+  position: relative;
+  display: block;
+  width: 172px;
+  height: 40px;
+  background: url('../images/footer-logo.png') no-repeat center;
+  background-size: cover;
+  margin-right: 180px;
+}
+
+.footer-left {
+  position: relative;
+  display: block;
+}
+
+.footer-nav {
+  position: relative;
+  display: block;
+}
+
+.footer-depth1 {
+  position: relative;
+  display: block;
+  margin-bottom: 15px;
+
+}
+
+.footer-depth1 li {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+}
+
+.footer-depth1 li a {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: rgb(68, 68, 68);
+  line-height: 24px;
+  margin-right: 30px;
+}
+
+.font-bold {
+  font-weight: 700;
+  color: #000;
+}
+
+.footer-insta {
+  position: relative;
+  display: block;
+  padding-left: 24px;
+}
+
+.footer-insta::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  background: url('../images/icon_footer_insta.png') no-repeat center;
+  background-size: cover;
+}
+
+.footer-info {
+  position: relative;
+  display: block;
+}
+
+.ft-info-depth1 {
+  position: relative;
+  display: block;
+}
+
+.ft-info-depth1 li {
+  position: relative;
+  display: inline-block;
+  font-size: 13px;
+  margin-top: 12px;
+  line-height: 16px;
+  color: rgb(153, 153, 153);
+}
+
+.ft-info-depth1 li::after {
+  display: inline-block;
+  content: "";
+  width: 1px;
+  height: 10px;
+  margin: 0px 12px;
+  background-color: rgb(204, 204, 204);
+}
+
+.ft-info-depth1 li:last-child::after{
+  display: none;
+}
+
+.ft-info-depth1 li a {
+  position: relative;
+  display: block;
+  font-size: 13px;
+  color: rgb(153, 153, 153);
+  text-decoration: underline;
+}
+
+.copy{
+  position: relative;
+  display: block;
+  margin-top: 12px;
+  font-size: 13px;
+  color: rgb(153, 153, 153);
 }
