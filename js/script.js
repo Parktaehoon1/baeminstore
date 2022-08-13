@@ -1,4 +1,17 @@
 $(document).ready(function () {
+    // 메뉴버튼 클릭시 모바일 메뉴 화면
+    let mbBtn = $('.menu-btn');
+    let mbWrap = $('.mb-wrap');
+
+    mbBtn.click(function(){
+        mbWrap.addClass('mb-wrap-show');
+    })
+    
+
+
+
+
+
 
     let header = $('.header');
 
