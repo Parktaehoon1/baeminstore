@@ -402,8 +402,8 @@ body {
 .sw-main-item-wrapper .main-slide {
   position: relative;
   display: block;
-  /* width: 100%; */
-  width: 312px;
+  width: 100%;
+  /* width: 312px; */
   height: 100%;
 
 }
@@ -544,6 +544,12 @@ body {
   visibility: visible;
 }
 
+#item-list-bottom .goods-list:hover .goods-list-hover{
+  opacity: 1;
+  visibility: visible;
+}
+
+
 .goods-list-hover img {
   position: relative;
   display: block;
@@ -578,6 +584,15 @@ body {
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
+  color: red;
+  text-decoration: underline  ;
+  text-align: center;
+}
+
+.item-subtag{
+  margin-left: 10px;
+  color:#6236FF;
+  text-decoration: underline;
 }
 
 .item-title {

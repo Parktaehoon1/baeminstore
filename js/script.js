@@ -198,5 +198,34 @@ window.onload = function () {
         .catch(err => console.log(err))
 
 
+// item-list-bottom
+        fetch("itemlistbottom.json")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+
+            let html = ''
+
+            data.forEach(element => {
+                console.log(element)
+                html += `
+                <div class="goods-list">
+                <img src="${element.url}" alt="gg">
+                <span class="goods-list-hover">
+                <img src="${element.hoverurl}" alt="">
+                </span>
+                <div class="goods-list-desc">
+                <p class="item-tag">${element.tag}<span class="item-subtag">${element.subtag}</span></p>
+                <p class="item-title">${element.title}</p>
+                <p class="item-price"><span class="item-sale">${element.price}</span>${element.subtitle}</p>
+                </div>
+                </div>
+                    `;
+            });
+            html += '';
+            document.getElementById('item-list-bottom').innerHTML = html;
+        })
+        .catch(err => console.log(err))
+
 
 }
