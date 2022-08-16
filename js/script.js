@@ -2,12 +2,22 @@ $(document).ready(function () {
     // 메뉴버튼 클릭시 모바일 메뉴 화면
     let mbBtn = $('.menu-btn');
     let mbWrap = $('.mb-wrap');
+    let mbGnb = $('.mb-gnb')
+    let mbHeaderBtn = $('.mb-header-bt');
+    let mbDim = $('.mb-wrap-show');
 
-    mbBtn.click(function(){
+
+    mbBtn.click(function(event){
+		event.preventDefault();
         mbWrap.addClass('mb-wrap-show');
+        mbGnb.addClass('mb-gnb-show');
+    })
+
+    mbHeaderBtn.click(function(){
+        mbWrap.removeClass('mb-wrap-show');
+        mbGnb.removeClass('mb-gnb-show');
     })
     
-
 
 
 
@@ -182,33 +192,33 @@ window.onload = function () {
 
     // 스와이퍼
 
-    fetch("swiper.json")
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data)
+    // fetch("swiper.json")
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         // console.log(data)
 
-            let html = ''
+    //         let html = ''
 
-            data.forEach(element => {
-                console.log(element)
-                html += `
-            <div class="swiper-slide main-slide">
-            <img src="${element.url}" alt="">
-            <span class="swiper-img-hover">
-              <img src="${element.hoverurl}" alt="">
-            </span>
-            <div class="main-item-desc">
-              <p>${element.title}</p>
-              <p>${element.subtitle}</p>
-            </div>
-          </div>
-            `;
+    //         data.forEach(element => {
+    //             console.log(element)
+    //             html += `
+    //         <div class="swiper-slide main-slide">
+    //         <img src="${element.url}" alt="">
+    //         <span class="swiper-img-hover">
+    //           <img src="${element.hoverurl}" alt="">
+    //         </span>
+    //         <div class="main-item-desc">
+    //           <p>${element.title}</p>
+    //           <p>${element.subtitle}</p>
+    //         </div>
+    //       </div>
+    //         `;
 
-            });
-            html += '';
-            document.getElementById('main-slide').innerHTML = html;
-        })
-        .catch(err => console.log(err))
+    //         });
+    //         html += '';
+    //         document.getElementById('main-slide').innerHTML = html;
+    //     })
+    //     .catch(err => console.log(err))
 
 
 // item-list-bottom

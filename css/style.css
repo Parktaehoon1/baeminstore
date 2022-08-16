@@ -84,10 +84,23 @@ body {
 }
 
 /* 모바일메뉴 진행중 코드*/
-/* .mb-wrap{
+
+.mb-wrap{
   opacity: 0;
   visibility: hidden;
 }
+/* .mb-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 99999;
+  opacity: 1;
+  visibility: visible;
+} */
 
 
 .mb-wrap-show{
@@ -101,67 +114,185 @@ body {
   z-index: 99999;
   opacity: 1;
   visibility: visible;
-  padding: 0 60px;
 }
 
 .mb-gnb{
   position: fixed;
   top: 0;
-  right: 0;
+  right: -380px;
   width: 380px;
-  height: 100%;
+  height: 100vh;
   padding: 80px 20px;
   background-color: rgb(255, 255, 255);
   display: block;
   overflow: hidden;
   z-index: 1;
-  transition: right 0.4s ease 0s;
+  transition: all 0.5s;
 }
 
-.mb-gnb-title{}
-.mb-gnb-top{}
-.mb-gnb-top-depth1{}
-.mb-gnb-top-depth1 li{}
-.mb-gnb-top-depth1 li a{}
-
-
-.mb-gnb-bottom{}
-.mb-gnb-bottom-dpeht1{}
-.mb-gnb-bottom-dpeht1 li{}
-.mb-gnb-bottom-dpeht1 li a{}
-
-.mb-select{}
-.mb-select-depth1{}
-.mb-select-depth1 li{}
-
-.mb-btn-wrap{
-  position: absolute;
-  right: 20px;
-  top: 80px;
-  display: block;
-  width: 30px;
-  height: 30px;
+.mb-gnb-show{
+  right: 0px;
+  transition: right 0.5s;
 }
 
-.mb-btn-close{
+.mb-gnb-title{
+  position: relative;
+  display: block;    
+  font-family: BM-HANNA-11yrs-old, sans-serif;
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 400;
+  color: rgb(68, 68, 68);
+}
+.mb-gnb-top{
   position: relative;
   display: block;
-  font-size: 0;
-  width: 23px;
-  height: 2px;
-  transform: rotate(45deg);
-  background-color: #000;
+  font-size: 16px;
+  color: rgb(153, 153, 153);
+  font-weight: 400;
+  line-height: 19px;
+  margin-top: 60px;
 }
 
-.mb-btn-close::after{
+.mb-gnb-top-depth1{
+  position: relative;
+  display: block;
+}
+.mb-gnb-top-depth1 li{
+  position: relative;
+  display: block;
+}
+.mb-gnb-top-depth1 li a{
+  position: relative;
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: rgb(68, 68, 68);
+}
+
+
+.mb-gnb-bottom{
+  position: relative;
+  display: block;
+  font-size: 16px;
+  color: rgb(153, 153, 153);
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 10px;
+}
+.mb-gnb-bottom-dpeht1{
+  position: relative;
+  display: block;
+}
+.mb-gnb-bottom-depth1 li{
+  position: relative;
+  display: block;
+}
+.mb-gnb-bottom-depth1 li a{
+  position: relative;
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: rgb(68, 68, 68);
+}
+
+.mb-select{
+  position: relative;
+  display: block;
+  padding-top: 80px;
+}
+.mb-select-depth1{
+  position: relative;
+  display: block;
+  font-weight: 500;
+}
+.mb-select-depth1 li{
+  position: relative;
+  display: block;
+}
+
+.mb-select-left{
+  position: relative;
+  display: block;
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.mb-select-left::before{
+  content: '';
+  position: absolute;
+  left: 35px;
+  bottom: -5px;
+  display: block;
+  width: 34px;
+  height: 34px;
+  background: url('../images/mb-select.png') no-repeat center;
+  background-size: cover;
+}
+
+.mb-select-left::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  height: 16px;
+  width: 1px;
+  background-color: rgb(221, 221, 221);
+}
+
+.mb-select-right{
+  position: relative;
+  display: block;
+  width: 50%;
+  float: right;
+  text-align: center;
+}
+.require{
+  margin-left: 50px;
+}
+.email-rq{
+  margin-right: 50px;
+}
+
+
+.mb-header-bt{
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+
+}
+
+.header-line{
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 2px;
+  background-color: #000;
+  transform: rotate(45deg);
+}
+
+
+.header-line::after{
   content: '';
   position: relative;
   display: block;
-  width: 23px;
+  width: 30px;
   height: 2px;
-  transform: rotate(90deg);
   background-color: #000;
-} */
+  transform: rotate(90deg);
+}
 
 
 /* gotop */
@@ -357,8 +488,7 @@ body {
   height: 74px;
   right: 50%;
   margin-right: -674px;
-  background: url('../images/main_arr_next.png') no-repeat;
-  background-size: 74px auto;
+  color: lightgrey;
 }
 
 .swiper-button-prev {
@@ -366,6 +496,7 @@ body {
   height: 74px;
   left: 50%;
   margin-left: -674px;
+  color: lightgrey;
 }
 
 .swiper-button-prev:after {
@@ -429,6 +560,10 @@ body {
   height: 10px;
   margin-left: 20px;
 }
+.swiper-pagination-bullet-active{
+  background-color: #000;
+}
+
 
 /* 아이템 리스트 영역 */
 .item-list-wrap {
