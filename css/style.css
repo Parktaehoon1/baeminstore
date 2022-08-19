@@ -416,7 +416,6 @@ body {
 
 .depth1 li a:hover {
   color: #2AC1BC;
-  ;
 }
 
 
@@ -695,8 +694,19 @@ body {
   margin-bottom: 5px;
 }
 
+.main-slide:hover .item-price{
+  color: #2AC1BC;
+}
+
+
+.main-slide:hover .item-sale {
+  color: #2AC1BC;  
+}
+.main-slide:hover .main-item-desc {
+  color: #2AC1BC;  
+} 
 .main-item-desc:hover {
-  color: aquamarine;
+  color: #2AC1BC;
 }
 
 .item-list-wrap h3 {

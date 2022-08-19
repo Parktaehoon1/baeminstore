@@ -70,32 +70,6 @@ window.onload = function () {
     //         tolerance: 0       /*  글이 넘치면 이만큼쯤 height를 늘린다 */
     //       });
 
-    let visualSwiper = new Swiper('.sw-visual', {
-        loop: true,
-        speed: 500,
-        autoplay: {
-            delay: 1000,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        navigation: {
-            nextEl: ".sw-next-bt",
-            prevEl: ".sw-prev-bt",
-        },
-    })
-
-    let mainItemSwiper = new Swiper('.sw-main-item', {
-        loop: true,
-        speed: 500,
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        spaceBetween: 6,
-        navigation: {
-            nextEl: ".main-item-prev",
-            prevEl: ".main-item-next",
-        },
-    })
 
     // 데이터 받아보기
     fetch("itemlist.json")
@@ -192,33 +166,46 @@ window.onload = function () {
 
     // 스와이퍼
 
-    // fetch("swiper.json")
-    //     .then(res => res.json())
-    //     .then(data => {
-    //         // console.log(data)
+    fetch("swiper.json")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
 
-    //         let html = ''
+            let html = ''
 
-    //         data.forEach(element => {
-    //             console.log(element)
-    //             html += `
-    //         <div class="swiper-slide main-slide">
-    //         <img src="${element.url}" alt="">
-    //         <span class="swiper-img-hover">
-    //           <img src="${element.hoverurl}" alt="">
-    //         </span>
-    //         <div class="main-item-desc">
-    //           <p>${element.title}</p>
-    //           <p>${element.subtitle}</p>
-    //         </div>
-    //       </div>
-    //         `;
+            data.forEach(element => {
+                console.log(element)
+                html += `
+            <div class="swiper-slide main-slide">
+            <img src="${element.url}" alt="">
+            <span class="swiper-img-hover">
+              <img src="${element.hoverurl}" alt="">
+            </span>
+            <div class="main-item-desc">
+             <p class="item-tag">${element.tag}<span class="item-subtag">${element.subtag}</span></p>
+              <p>${element.title}</p>
+              <p class="item-price"><span class="item-sale">${element.price}</span>${element.subtitle}</p>
+            </div>
+          </div>
+            `;
 
-    //         });
-    //         html += '';
-    //         document.getElementById('main-slide').innerHTML = html;
-    //     })
-    //     .catch(err => console.log(err))
+            });
+            html += '';
+            document.getElementById('main-slide').innerHTML = html;
+
+            new Swiper('.sw-main-item', {
+                loop: true,
+                speed: 500,
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 6,
+                navigation: {
+                    nextEl: ".main-item-prev",
+                    prevEl: ".main-item-next",
+                },
+            })
+        })
+        .catch(err => console.log(err))
 
 
 // item-list-bottom
@@ -249,6 +236,66 @@ window.onload = function () {
             document.getElementById('item-list-bottom').innerHTML = html;
         })
         .catch(err => console.log(err))
+
+
+        let visualSwiper = new Swiper('.sw-visual', {
+            loop: true,
+            speed: 500,
+            autoplay: {
+                delay: 1000,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            navigation: {
+                nextEl: ".sw-next-bt",
+                prevEl: ".sw-prev-bt",
+            },
+        })
+
+        // 스와이퍼바텀
+
+        fetch("swiper.json")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+
+            let html = ''
+
+            data.forEach(element => {
+                console.log(element)
+                html += `
+            <div class="swiper-slide main-slide">
+            <img src="${element.url}" alt="">
+            <span class="swiper-img-hover">
+              <img src="${element.hoverurl}" alt="">
+            </span>
+            <div class="main-item-desc">
+             <p class="item-tag">${element.tag}<span class="item-subtag">${element.subtag}</span></p>
+              <p>${element.title}</p>
+              <p class="item-price"><span class="item-sale">${element.price}</span>${element.subtitle}</p>
+            </div>
+          </div>
+            `;
+
+            });
+            html += '';
+            document.getElementById('main-slide-bottom').innerHTML = html;
+
+            new Swiper('.sw-main-item', {
+                loop: true,
+                speed: 500,
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+                spaceBetween: 6,
+                navigation: {
+                    nextEl: ".main-item-prev",
+                    prevEl: ".main-item-next",
+                },
+            })
+        })
+        .catch(err => console.log(err))
+
 
 
 }
