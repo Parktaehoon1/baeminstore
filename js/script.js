@@ -7,21 +7,16 @@ $(document).ready(function () {
     let mbDim = $('.mb-wrap-show');
 
 
-    mbBtn.click(function(event){
-		event.preventDefault();
+    mbBtn.click(function (event) {
+        event.preventDefault();
         mbWrap.addClass('mb-wrap-show');
         mbGnb.addClass('mb-gnb-show');
     })
 
-    mbHeaderBtn.click(function(){
+    mbHeaderBtn.click(function () {
         mbWrap.removeClass('mb-wrap-show');
         mbGnb.removeClass('mb-gnb-show');
     })
-    
-
-
-
-
 
     let header = $('.header');
 
@@ -33,19 +28,19 @@ $(document).ready(function () {
             header.removeClass('header-fix');
         }
     })
+
+
     // goTop btn
     let go_top = $('.gotop')
     console.log(go_top)
 
-    $(window).scroll(function(){
+    $(window).scroll(function () {
         let temp = $(window).scrollTop();
-        console.log(temp);
-        if(temp > 500){
+        if (temp > 500) {
             go_top.addClass('gotop-show')
         } else {
             go_top.removeClass('gotop-show')
         }
-
     })
 
     // gotop 눌렀을 때 최상단으로 가는거
@@ -54,7 +49,6 @@ $(document).ready(function () {
             scrollTop: 0
         }, 1000);
     });
-
 
 })
 
@@ -202,14 +196,14 @@ window.onload = function () {
                 navigation: {
                     nextEl: ".main-item-prev",
                     prevEl: ".main-item-next",
-                },
+                }
             })
         })
         .catch(err => console.log(err))
 
 
-// item-list-bottom
-        fetch("itemlistbottom.json")
+    // item-list-bottom
+    fetch("itemlistbottom.json")
         .then(res => res.json())
         .then(data => {
             // console.log(data)
@@ -238,24 +232,24 @@ window.onload = function () {
         .catch(err => console.log(err))
 
 
-        let visualSwiper = new Swiper('.sw-visual', {
-            loop: true,
-            speed: 500,
-            autoplay: {
-                delay: 1000,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            navigation: {
-                nextEl: ".sw-next-bt",
-                prevEl: ".sw-prev-bt",
-            },
-        })
+    let visualSwiper = new Swiper('.sw-visual', {
+        loop: true,
+        speed: 500,
+        autoplay: {
+            delay: 1000,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        navigation: {
+            nextEl: ".sw-next-bt",
+            prevEl: ".sw-prev-bt",
+        },
+    })
 
-        // 스와이퍼바텀
+    // 스와이퍼바텀
 
-        fetch("swiper.json")
+    fetch("swiper.json")
         .then(res => res.json())
         .then(data => {
             // console.log(data)
