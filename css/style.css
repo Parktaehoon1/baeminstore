@@ -986,13 +986,22 @@ body {
   padding-bottom: 200px;
   flex: 1;
 }
+.item-list-wrap .inner{
+  width: 100%;
+}
 
+.banner-box{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 
 .main-item-banner {
   position: relative;
   display: block;
-  width: 100%;
+  max-width: 1200px;
+  height: 100%;
   margin-top: 120px;
 }
 .main-item-banner img {
@@ -1258,18 +1267,28 @@ body {
   text-decoration: line-through;
 }
 
-@media all and (max-width:760px){
+@media all and (max-width:1000px){
+  .item-list-wrap h3 {
+    margin-top: 120px;
+    padding-top: 120px;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 42px;
+    text-align: center;
+    border-top: 1px solid #DDD;
+  }
+  
   .item-list {
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
-    margin-left: 50px;
   }
+  
+  
   .goods-list {
     position: relative;
-    width: 282px;
-    margin: 0 0 0 10px;
+    width: 50%;
+    margin: 0;
     font-size: 16px;
     text-align: center;
     transition: .3s ease color;
@@ -1277,24 +1296,111 @@ body {
     flex-direction: column;
     cursor: pointer;
   }
-  .item-list-wrap {
+  
+  
+  
+  .goods-list:nth-child(4n) {
+    margin-left: 0;
+  }
+  
+  .goods-list img {
+    position: relative;
+    display: block;
+    width: 100%;
+  }
+  
+  .goods-list-hover {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 282px;
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-in-out 0.5s;
+  }
+  
+  #item-list .goods-list:hover .goods-list-hover {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #md-item-list .goods-list:hover .goods-list-hover {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #item-list-bottom .goods-list:hover .goods-list-hover{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  
+  .goods-list-hover img {
+    position: relative;
+    display: block;
+  }
+  
+  .goods-list:hover .item-title {
+    color: #2AC1BC;
+  }
+  
+  .goods-list:hover .item-price {
+    color: #2AC1BC;
+  }
+  
+  .goods-list:hover .item-sale {
+    color: #2AC1BC;
+  }
+  
+  .goods-list-desc {
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    padding-top: 22px;
+  }
+  
+  .item-tag {
     position: relative;
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-    padding-bottom: 200px;
-    flex: 1;
-  }
-  .item-list-wrap h3 {
-    width: 760px;
-    margin-top: 60px;
-    padding-top: 60px;
-    font-size: 30px;
-    font-weight: 800;
-    line-height: 42px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 15px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    color: red;
+    text-decoration: underline  ;
     text-align: center;
-    border-top: 1px solid #DDD;
+  }
+  
+  .item-subtag{
+    margin-left: 10px;
+    color:#6236FF;
+    text-decoration: underline;
+  }
+  
+  .item-title {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .item-price {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .item-sale {
+    display: inline-block;
+    margin-right: 8px;
+    color: #CCC;
+    transition: .3s ease color;
+    text-decoration: line-through;
   }
   
 }

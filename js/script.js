@@ -190,12 +190,19 @@ window.onload = function () {
             new Swiper('.sw-main-item', {
                 loop: true,
                 speed: 500,
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                spaceBetween: 6,
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 0,
                 navigation: {
                     nextEl: ".main-item-prev",
                     prevEl: ".main-item-next",
+                },
+                breakpoints:{
+                    760: {
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+                        spaceBetween: 6,
+                      },
                 }
             })
         })
