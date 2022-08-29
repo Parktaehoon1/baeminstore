@@ -158,57 +158,6 @@ window.onload = function () {
         document.getElementById('md-item-list').innerHTML = html;
     }
 
-    // 스와이퍼
-
-    fetch("swiper.json")
-        .then(res => res.json())
-        .then(data => {
-            // console.log(data)
-
-            let html = ''
-
-            data.forEach(element => {
-                console.log(element)
-                html += `
-            <div class="swiper-slide main-slide">
-            <img src="${element.url}" alt="">
-            <span class="swiper-img-hover">
-              <img src="${element.hoverurl}" alt="">
-            </span>
-            <div class="main-item-desc">
-             <p class="item-tag">${element.tag}<span class="item-subtag">${element.subtag}</span></p>
-              <p>${element.title}</p>
-              <p class="item-price"><span class="item-sale">${element.price}</span>${element.subtitle}</p>
-            </div>
-          </div>
-            `;
-
-            });
-            html += '';
-            document.getElementById('main-slide').innerHTML = html;
-
-            new Swiper('.sw-main-item', {
-                loop: true,
-                speed: 500,
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-                spaceBetween: 0,
-                navigation: {
-                    nextEl: ".main-item-prev",
-                    prevEl: ".main-item-next",
-                },
-                breakpoints:{
-                    760: {
-                        slidesPerView: 3,
-                        slidesPerGroup: 3,
-                        spaceBetween: 6,
-                      },
-                }
-            })
-        })
-        .catch(err => console.log(err))
-
-
     // item-list-bottom
     fetch("itemlistbottom.json")
         .then(res => res.json())
@@ -255,6 +204,59 @@ window.onload = function () {
     })
 
     // 스와이퍼바텀
+    // 스와이퍼
+
+    fetch("swiper.json")
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data)
+
+            let html = ''
+
+            data.forEach(element => {
+                console.log(element)
+                html += `
+        <div class="swiper-slide main-slide">
+        <img src="${element.url}" alt="">
+        <span class="swiper-img-hover">
+            <img src="${element.hoverurl}" alt="">
+        </span>
+        <div class="main-item-desc">
+            <p class="item-tag">${element.tag}<span class="item-subtag">${element.subtag}</span></p>
+            <p>${element.title}</p>
+            <p class="item-price"><span class="item-sale">${element.price}</span>${element.subtitle}</p>
+        </div>
+        </div>
+        `;
+
+            });
+            html += '';
+            document.getElementById('main-slide').innerHTML = html;
+
+            new Swiper('.sw-main-item', {
+                loop: true,
+                speed: 500,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+                spaceBetween: 6,
+                navigation: {
+                    nextEl: ".main-item-prev",
+                    prevEl: ".main-item-next",
+                },
+                breakpoints: {
+                    760: {
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+                        spaceBetween: 6,
+                    },
+                }
+            })
+        })
+        .catch(err => console.log(err))
+
+
+
+
 
     fetch("swiper.json")
         .then(res => res.json())
@@ -269,30 +271,37 @@ window.onload = function () {
             <div class="swiper-slide main-slide">
             <img src="${element.url}" alt="">
             <span class="swiper-img-hover">
-              <img src="${element.hoverurl}" alt="">
+                <img src="${element.hoverurl}" alt="">
             </span>
             <div class="main-item-desc">
-             <p class="item-tag">${element.tag}<span class="item-subtag">${element.subtag}</span></p>
-              <p>${element.title}</p>
-              <p class="item-price"><span class="item-sale">${element.price}</span>${element.subtitle}</p>
+            <p class="item-tag">${element.tag}<span class="item-subtag">${element.subtag}</span></p>
+            <p>${element.title}</p>
+            <p class="item-price"><span class="item-sale">${element.price}</span>${element.subtitle}</p>
             </div>
-          </div>
+            </div>
             `;
 
             });
             html += '';
             document.getElementById('main-slide-bottom').innerHTML = html;
 
-            new Swiper('.sw-main-item', {
+            new Swiper('.sw-main-item-bottom', {
                 loop: true,
                 speed: 500,
-                slidesPerView: 3,
-                slidesPerGroup: 3,
+                slidesPerView: 2,
+                slidesPerGroup: 2,
                 spaceBetween: 6,
                 navigation: {
                     nextEl: ".main-item-prev",
                     prevEl: ".main-item-next",
                 },
+                breakpoints: {
+                    760: {
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+                        spaceBetween: 6,
+                    },
+                }
             })
         })
         .catch(err => console.log(err))
